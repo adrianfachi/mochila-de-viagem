@@ -44,8 +44,12 @@ function criaElemento(item) {
 	novoItem.classList.add("item");
 
 	const numeroItem = document.createElement("strong");
-	numeroItem.innerHTML = item.quantidade;
-    numeroItem.dataset.id = item.id
+	if(item.quantidade == 0){
+		numeroItem.innerHTML = 1;
+	} else {
+		numeroItem.innerHTML = item.quantidade;
+	}
+    	numeroItem.dataset.id = item.id
 	const lixeira = document.createElement("img")
 	lixeira.setAttribute("src", "lixeira.png")
 	lixeira.setAttribute("id", item.nome)
