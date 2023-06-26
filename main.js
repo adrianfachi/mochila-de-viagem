@@ -62,8 +62,7 @@ function criaElemento(item) {
 		evento.preventDefault();
 		const elemento = document.getElementById(item.nome).parentElement
 		elemento.remove()
-		const existe = itens.find(id => id)
-		const index = itens.indexOf(existe)
+		const index = itens.indexOf(item)
 		itens.splice(index, 1)
 		localStorage.setItem('itens', JSON.stringify(itens))
 	})
